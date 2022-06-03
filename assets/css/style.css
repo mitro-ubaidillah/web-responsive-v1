@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 *{
     box-sizing: border-box;
 }
 
 body{
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -23,27 +23,45 @@ h2, h3 {
     color: #00a2c6;
 }
 
-nav{
-    background-color: #00a2c6;
-    padding: 5px;
-    position: sticky;
-    top: 0;
+.brand{
+    font-size: 26px;
+    color: white;
+    font-weight: bold;
+    float: left;
+    flex-basis: 20%;
+    text-decoration: none;
+    margin: auto;
+    margin-left: 30px;
 }
 
-nav li{
-    display: inline;
+.nav-container{
+    background-color: #00a2c6;
+    padding: 5px;
+    display: flex;
+}
+
+.navbar {
+    flex-basis: 80%;
+}
+
+.navbar li{
+    display: inline-block;
     list-style: none;
     margin-right: 20px;
 }
-nav a {
+.navbar a {
     font-size: 18px;
     font-weight: 400;
     text-decoration: none;
     color: white;
 }
 
-nav a:hover{
+.navbar a:hover{
     font-weight: bold;
+}
+
+.btn-dropdown{
+    display: none;
 }
 
 .profile{
@@ -69,11 +87,58 @@ nav a:hover{
 }
 
 .jumbotron{
-    font-size: 20px;
     padding: 60px;
-    background-color: #00c8eb;
-    color:white;
-    text-align: center;
+    /* color:white; */
+}
+
+.banner-text{
+    padding: 50px;
+    line-height: 1.5;
+}
+
+.slide{
+    max-width: 600px;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    display: none;
+}
+
+.slider-wrapper{
+    position: relative;
+}
+
+.slider-navigation{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.slider-navigation .prev, .slider-navigation .next{
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+    color: white;
+    transition: 0.5s ease;
+}
+
+.slider-navigation .prev:hover, .slider-navigation .next:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #1c1c1c;
+}
+
+.d-flex{
+    display: flex;
+    overflow: hidden;
+}
+
+.box{
+    flex-grow: 1;
 }
 
 #content{
@@ -87,6 +152,10 @@ aside{
     padding-left: 20px;
 }
 
+/* slider */
+
+
+
 footer {
     padding: 20px;
     color: white;
@@ -96,9 +165,27 @@ footer {
 }
 
 
+
+@keyframes fade{
+    from{opacity: 0.2;}
+    to{opacity: 1;}
+}
+
 @media screen and (max-width: 1000px){
     #conten, aside{
         width: 100%;
         padding: 0px;
+    }
+    .navbar{
+        display: none;
+    }
+    .brand{
+        flex-basis: 80%;
+    }
+    .nav-container{
+        padding: 20px;
+    }
+    .btn-dropdown{
+        display: block;
     }
 }

@@ -5,20 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Dasar Pemrograman Web</title>
+    <title>Esport Indonesia</title>
 </head>
 <body>
-    <header class="jumbotron">
-        <h1>Bandung</h1>
-        <p>Kota metropolitan terbesar di Provinsi Jawa Barat, sekaligus menjadi ibu kota provinsi tersebut.</p>
-    </header>
     <nav>
-        <ul>
-            <li><a href="#sejarah">Sejarah</a></li>
-            <li><a href="#geografis">Geografis</a></li>
-            <li><a href="#wisata">Wisata</a></li>
-        </ul>
+        <div class="nav-container">
+            <a href="#" class="brand">Seputar E-SPORT</a>
+            <button class="btn-dropdown" onclick="dropdown()">menu</button>
+            <div class="navbar" id="dropdown-items">
+                <ul>
+                    <li><a href="#">Apa itu E-sport ?</a></li>
+                    <li><a href="#">Sejarah</a></li>
+                    <li><a href="#">Cabang E-sport</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
+    <header class="jumbotron d-flex">
+        <div class="slider-container box">
+            <div class="slider-wrapper">
+                <img src="assets/image/1.jpg" class="slide" />
+                <img src="assets/image/2.jpg" class="slide" />
+                <img src="assets/image/3.jpg" class="slide" />
+                <img src="assets/image/4.jpg" class="slide" />
+                <div class="slider-navigation">
+                    <a class="prev" onclick="plusSlide(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlide(-1)">&#10095;</a>
+                </div>
+            </div>
+        </div>
+        <div class="box banner-text">
+            <h1>E-sport</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quia tenetur, cumque impedit facere ipsam, harum libero possimus iusto error eligendi quos sunt, hic nihil architecto porro soluta expedita. Mollitia.</p>
+        </div>
+    </header>
     <main>
         <div id="content">
             <article id="sejarah" class="card">
@@ -101,5 +121,24 @@
     <footer>
         <p>Belajar Dasar Pemrograman Web &#169; 2019, Dicoding Academy</p>
     </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        function dropdown() {
+             document.getElementById("dropdown-items").style.display= "inline-block";
+        }
+        window.onclick = function(e) {
+            if (!e.target.matches('.btn-dropdown')) {
+
+                var dropdowns = document.getElementById("dropdown-items");
+                for (var d = 0; d < dropdowns.length; d++) {
+                var openDropdown = dropdowns[d];
+                if (openDropdown.style.display = "inline-block") {
+                    openDropdown.style.display = "none";
+                }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
