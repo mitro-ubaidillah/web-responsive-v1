@@ -8,6 +8,7 @@ body{
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #282a36;
 }
 
 main{
@@ -15,54 +16,64 @@ main{
     overflow: auto;
 }
 
-/* header{
-    display: inline;
-} */
-
-h2, h3 {
-    color: #00a2c6;
+.bg-primary{
+    background-color: #171a26;
 }
 
-.brand{
-    font-size: 26px;
-    color: white;
-    font-weight: bold;
-    float: left;
-    flex-basis: 20%;
-    text-decoration: none;
-    margin: auto;
-    margin-left: 30px;
+.bg-second{
+    background-color: #862525;
 }
 
 .nav-container{
-    background-color: #00a2c6;
-    padding: 5px;
-    display: flex;
+    margin:0;
+    padding: 10px;
 }
 
-.navbar {
-    flex-basis: 80%;
+h2, h3 {
+    color: #ac3131;
 }
 
-.navbar li{
-    display: inline-block;
+.brand {
+    padding: 10px;
+    float: left;
+}
+
+.brand a{
+    font-size: 26px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 30px;
+}
+
+
+ul.top-nav{
     list-style: none;
-    margin-right: 20px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
-.navbar a {
-    font-size: 18px;
+
+ul.top-nav li {
+    float: left;
+}
+
+ul.top-nav li a {
+    margin-right: 20px;
+    display: inline-block;
+    font-size: 16px;
     font-weight: 400;
     text-decoration: none;
     color: white;
-}
-
-.navbar a:hover{
+    padding: 16px 10px;
     font-weight: bold;
 }
 
-.btn-dropdown{
-    display: none;
+ul.top-nav li a:hover{
+    color: #ac3131;
 }
+
+ul.top-nav li.icon {display: none;}
 
 .profile{
     text-align: center;
@@ -75,8 +86,9 @@ h2, h3 {
     object-position: center;
 }
 
-.profile image{
+.profile img{
     width: 200px;
+    border-radius: 50%;
 }
 
 .card{
@@ -84,11 +96,15 @@ h2, h3 {
     border-radius: 5px;
     padding: 20px;
     margin-top: 20px;
+    border: 1px solid #171a26;
+    /* background-color: #171a26; */
+    color: white;
 }
 
 .jumbotron{
-    padding: 60px;
+    padding: 0px;
     /* color:white; */
+    margin : 20px;
 }
 
 .banner-text{
@@ -159,7 +175,7 @@ aside{
 footer {
     padding: 20px;
     color: white;
-    background-color: #00a2c6;
+    background-color: #171a26;
     text-align: center;
     font-weight: bold;
 }
@@ -176,16 +192,36 @@ footer {
         width: 100%;
         padding: 0px;
     }
-    .navbar{
-        display: none;
-    }
     .brand{
         flex-basis: 80%;
     }
     .nav-container{
         padding: 20px;
     }
-    .btn-dropdown{
-        display: block;
-    }
+
 }
+
+@media screen and (max-width:680px) {
+    ul.top-nav{position: relative;}
+    ul.top-nav li {display: none;}
+    ul.top-nav li.icon {
+      float: right;
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .brand{
+        float: none;
+    }
+
+    ul.top-nav.responsive li {
+      float: none;
+      display: inline;
+    }
+    ul.top-nav.responsive li a {
+      display: block;
+      text-align: center;
+    }
+  }
