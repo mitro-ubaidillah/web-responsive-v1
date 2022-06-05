@@ -1,24 +1,5 @@
 var slideIndex = 1;
 
-let posts = {
-    a : {
-        image : "esport.jpg",
-        title : "Apa itu E-sport",
-        data : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quia tenetur, cumque impedit facere ipsam, harum libero possimus iusto error eligendi quos sunt, hic nihil architecto porro soluta expedita. Mollitia"
-    },
-    b : {
-        image : "history.jpg",
-        title : "Sejarah",
-        data : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quia tenetur, cumque impedit facere ipsam, harum libero possimus iusto error eligendi quos sunt, hic nihil architecto porro soluta expedita. Mollitia" 
-    },
-    c : {
-        image : "cabang.jpg",
-        title : "Cabang E-sport",
-        data : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quia tenetur, cumque impedit facere ipsam, harum libero possimus iusto error eligendi quos sunt, hic nihil architecto porro soluta expedita. Mollitia" 
-    }
-
-}
-
 slideShow(slideIndex);
 postShow();
 
@@ -55,11 +36,27 @@ function postShow() {
         // console.log(value.title);
         let data = document.createElement('article');
         data.classList.add('card');
-        data.innerHTML = "<h2>"+value.image+"</h2>";
-        data.innerHTML += "<h2>"+value.title+"</h2>";
-        data.innerHTML += "<p>"+value.data+"</p>";
-
-
+        if(value.data1 != undefined){
+            data.innerHTML = "<h2>"+value.image+"</h2>";
+            data.innerHTML += "<h2>"+value.title+"</h2>";
+            data.innerHTML += "<p>"+value.data1+"</p>";
+            data.innerHTML += "<p>"+value.data2+"</p>";
+            if(value.title == "Jenis"){
+                for(const [key, value] of entries(jenis))
+                data.innerHTML += "<h3>"+value.title+"</h3>";
+            }
+        }else{
+            data.innerHTML = "<h2>"+value.image+"</h2>";
+            data.innerHTML += "<h2>"+value.title+"</h2>";
+            data.innerHTML += "<p>"+value.data+"</p>";
+            if(value.title == "Jenis"){
+                for(const [key, value] of entries(jenis)){
+                data.innerHTML += "<h3>"+value.title+"</h3>";
+                data.innerHTML += "<h3>"+value.image+"</h3>";
+                data.innerHTML += "<p>"+value.data+"</p>";
+                }
+            }
+        }
         item_post.appendChild(data);
     }
 }

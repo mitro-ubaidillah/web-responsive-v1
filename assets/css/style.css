@@ -12,7 +12,7 @@ body{
 }
 
 main{
-    padding: 20px;
+    padding: 30px;
     overflow: auto;
 }
 
@@ -39,7 +39,7 @@ h2, h3 {
 }
 
 .brand a{
-    font-size: 26px;
+    font-size: 1.8rem;
     color: white;
     font-weight: bold;
     text-decoration: none;
@@ -61,7 +61,7 @@ ul.top-nav li {
 ul.top-nav li a {
     margin-right: 20px;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     text-decoration: none;
     color: white;
@@ -79,6 +79,15 @@ ul.top-nav li.icon {display: none;}
     text-align: center;
 }
 
+section table{
+    margin-inline: auto;
+    text-align: left!important;
+}
+
+section table tr td{
+    padding: 5px;
+}
+
 .futured-image{
     width: 100%;
     max-height: 300px;
@@ -87,13 +96,12 @@ ul.top-nav li.icon {display: none;}
 }
 
 .profile img{
-    width: 200px;
+    width: min(100%, 250px);
     border-radius: 50%;
 }
 
 .card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
     padding: 20px;
     margin-top: 20px;
     border: 1px solid #171a26;
@@ -101,10 +109,8 @@ ul.top-nav li.icon {display: none;}
     color: white;
 }
 
-.jumbotron{
-    padding: 0px;
-    /* color:white; */
-    margin : 20px;
+article.card{
+    border-radius: 2%;
 }
 
 .banner-text{
@@ -113,7 +119,10 @@ ul.top-nav li.icon {display: none;}
 }
 
 .slide{
-    max-width: 600px;
+    object-fit: cover;
+    object-position: center;
+    height: 400px;
+    width: 100%;
     animation-name: fade;
     animation-duration: 1.5s;
     display: none;
@@ -151,10 +160,15 @@ ul.top-nav li.icon {display: none;}
 .d-flex{
     display: flex;
     overflow: hidden;
+    width: 100%;
 }
 
 .box{
-    flex-grow: 1;
+    flex-basis: 35%;
+}
+
+.double{
+    flex-basis: 65%;
 }
 
 #content{
@@ -168,8 +182,9 @@ aside{
     padding-left: 20px;
 }
 
-/* slider */
-
+.jumbotron{
+    padding: 0;
+}
 
 
 footer {
@@ -187,8 +202,9 @@ footer {
     to{opacity: 1;}
 }
 
-@media screen and (max-width: 1000px){
-    #conten, aside{
+@media screen and (max-width: 1039px){
+    #content,
+    aside{
         width: 100%;
         padding: 0px;
     }
@@ -197,6 +213,29 @@ footer {
     }
     .nav-container{
         padding: 20px;
+    }
+    .d-flex{
+        display: block;
+    }
+
+    .card{
+        width: min(100% - 3rem, 900px);
+        margin-inline: auto;
+    }
+
+    footer{
+        margin-top: 20px;
+    }
+
+    .biodata{
+        display: flex;
+    }
+
+    .biodata figure{
+        flex-basis: 50%;
+    }
+    .biodata section{
+        flex-basis: 50%;
     }
 
 }
@@ -223,5 +262,12 @@ footer {
     ul.top-nav.responsive li a {
       display: block;
       text-align: center;
+    }
+    
+    main{
+        padding: 0;
+    }
+    .biodata{
+        display: block;
     }
   }
