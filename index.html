@@ -5,46 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>E-sport Indonesia</title>
+    <title>Esport Indonesia</title>
 </head>
 <body>
-    <nav>
-        <div class="nav-container bg-primary">
-            <ul class="top-nav" id="myTopNav">
-                <div class="brand">
-                    <a href="#">Seputar <span style="color: #ac3131">Esport</span>
-                </div>
-                <li><a href="#">Apa itu Esport ?</a></li>
-                <li><a href="#">Sejarah</a></li>
-                <li><a href="#">Cabang Esport</a></li>
-                <li class="icon">
-                    <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <header class="jumbotron d-flex card bg-primary">
-        <div class="slider-container double">
-            <div class="slider-wrapper">
-                <img src="assets/image/1.jpg" class="slide" />
-                <img src="assets/image/2.jpg" class="slide" />
-                <img src="assets/image/3.jpg" class="slide" />
-                <img src="assets/image/4.jpg" class="slide" />
-                <div class="slider-navigation">
-                    <a class="prev" onclick="plusSlide(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlide(-1)">&#10095;</a>
+    <header>
+        <nav>
+            <div class="nav-container bg-primary">
+                <ul class="top-nav" id="myTopNav">
+                    <div class="brand">
+                        <a href="#">Seputar <span style="color: #ac3131">Esport</span>
+                    </div>
+                    <li><a href="#esport">Apa itu Esport ?</a></li>
+                    <li><a href="#history">Sejarah</a></li>
+                    <li><a href="#jenis">Jenis Esport</a></li>
+                    <li class="icon">
+                        <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="jumbotron d-flex card bg-primary">
+            <div class="slider-container double">
+                <div class="slider-wrapper">
+                    <img src="assets/image/jenis.jpg" class="slide" />
+                    <img src="assets/image/esport.jpg" class="slide" />
+                    <img src="assets/image/fps.jpg" class="slide" />
+                    <img src="assets/image/history.jpg" class="slide" />
+                    <img src="assets/image/pes.jpg" class="slide" />
+                    <img src="assets/image/moba.jpg" class="slide" />
+                    <div class="slider-navigation">
+                        <a class="prev" onclick="plusSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlide(-1)">&#10095;</a>
+                    </div>
                 </div>
             </div>
-        </div>
-         <div class="box banner-text bg-second">
-            <h1>E-sport</h1>
-            <h4>merupakan suatu kompetisi permainan video pemain jamak, umumnya antara para pemain profesional</h4>
+             <div class="box banner-text bg-second">
+                <h1>Esport</h1>
+                <h4>merupakan suatu kompetisi permainan video pemain jamak, umumnya antara para pemain profesional</h4>
+            </div>
         </div>
     </header>
     <main>
         <div id="content">
         </div>
-    
         <aside>
             <article class="profile card bg-primary">
                 <h2>My Profile</h2>
@@ -78,7 +81,7 @@
                             </tr>
                                 <tr>
                                 <th>GitHub</th>
-                                <td><a href="https://bit.ly/3NXjxO9">Link</a></td>
+                                <td class="github-link"><a href="https://bit.ly/3NXjxO9">Link</a></td>
                             </tr>
                        </table>
                      </section>
@@ -87,20 +90,9 @@
         </aside>
     </main>
     <footer>
-        <p>Belajar Dasar Pemrograman Web &#169; 2019, Dicoding Academy</p>
+        <p>Submission Belajar Dasar Pemrograman Web &#169; 2022, @Mitro</p>
     </footer>
-
     <script src="assets/js/data.js"></script>
     <script src="assets/js/script.js"></script>
-    <script>
-        function myFunction() {
-    var nav = document.getElementById("myTopNav");
-    if (nav.className === "top-nav") {
-        nav.className += " responsive";
-    } else {
-        nav.className = "top-nav";
-    }
-}
-    </script>
 </body>
 </html>
